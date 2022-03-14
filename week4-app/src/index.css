@@ -11,6 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+<<<<<<< HEAD
 
 #sidebar{
   background-color: aquamarine;
@@ -19,3 +20,5 @@ code {
 #content{
   background-color: lightgray;
 }
+=======
+>>>>>>> e20f7fa7669885c0e0aa525946dff793c9db1d5b
