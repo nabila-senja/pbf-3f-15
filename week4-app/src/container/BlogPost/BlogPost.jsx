@@ -41,7 +41,7 @@ class BlogPost extends Component {
         formInsertArticle['id'] = timestamp;
         formInsertArticle[event.target.name] = event.target.value;
         this.setState({
-          insertArticle : formInsertArtcle
+          insertArticle : formInsertArticle
         })
       };
 
@@ -67,13 +67,13 @@ class BlogPost extends Component {
                     <div className="form-group row">
                         <label htmlFor="title" className="col-sm-2 col-form-label">Judul</label>
                         <div className="col-sm-10">
-                            <input type="text" className="form-control" id="title" name="title" onChange={this.handleTambahArtikel} />
+                            <input type="text" className="form-control" id="title" name="title" onChange={this.handleTambahArticle} />
                         </div>
                     </div>
                     <div className="form-group row">
                         <label htmlFor="body" className="col-sm-2 col-form-label">Isi</label>
                         <div className="col-sm-10">
-                            <textarea className="form-control" name="body" id="body" rows="3" onChange={this.handleTambahArtikel}></textarea>
+                            <textarea className="form-control" name="body" id="body" rows="3" onChange={this.handleTambahArticle}></textarea>
                         </div>
                     </div>
                     <button type="submit" className="btn btn-primary" onClick={this.handleTombolSimpan}>Simpan</button>
