@@ -4,8 +4,14 @@ import Post from "../../component/BlogPost/Post";
 
 class BlogPost extends Component {
     state = {
-        listArticle: []
+        listArticle: [],
+        insertArtikel : {
+            userId: 1,
+            id: 1,
+            title: "",
+            body: ""
     }
+}
 
     ambilDataDariServerAPI = () => {
         fetch('http://localhost:3004/posts')
@@ -28,6 +34,30 @@ class BlogPost extends Component {
                 (res) => this.ambilDataDariServerAPI()
             );
     };
+
+    handleTambahArticle = (event) => {
+        let formInsertArticle = {...this.state.insertArticle};
+        let timestamp = new Date().getTime();
+        formInsertArticle['id'] = timestamp;
+        formInsertArticle[event.target.name] = event.target.value;
+        this.setState({
+          insertArticle : formInsertArtcle
+        })
+      };
+
+    handleTombolSimpan = () => {
+        fetch('http://localhost:3004/posts', {
+          method: 'post',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(this.state.insertArticle)
+        })
+        .then((response) => {
+          this.ambilDataDariServerAPI()
+        })
+      }
 
     render() {
         return (
