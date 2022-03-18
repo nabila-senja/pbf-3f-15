@@ -81,7 +81,12 @@ class BlogPost extends Component {
                 <h2>Daftar Artikel</h2>
                 {
                     this.state.listArticle.map(article => {
-                        return <Post key={article.id} judul={article.title} isi={article.body} idArticle={article.id} hapusArticle={this.handleHapusArticle} />
+                        return <Post 
+                        key={article.id} 
+                        judul={article.title} 
+                        isi={article.body} 
+                        idArticle={article.id} 
+                        hapusArticle={this.handleHapusArticle} />
                     })
                 }
             </div>
