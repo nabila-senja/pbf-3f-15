@@ -22,7 +22,7 @@ class ListMahasiswa extends Component {
       .then(response => response.json())
       .then(jsonHasilAmbilDariAPI => {
         this.setState({
-          ListMahasiswa: jsonHasilAmbilDariAPI
+          listMahasiswa: jsonHasilAmbilDariAPI
         })
       })
   }
@@ -59,7 +59,7 @@ class ListMahasiswa extends Component {
       body: JSON.stringify(this.state.insertMahasiswa)
     })
     .then((Response) => {
-      this.ambilDataDaraiServerAPI()
+      this.ambilDataDariServerAPI()
     })
   }
 
@@ -67,9 +67,9 @@ class ListMahasiswa extends Component {
     return (
       <>
       <div className='row g-3'>
-        <div class="card">
+        <div className="card">
           <h3>Form Input Mahasiswa</h3>
-          <div class="card-body">
+          <div className="card-body">
             <div className='col-md-6'>
               <label htmlFor='nim' className='form-label'>NIM</label>
               <input type='number' className='form-control' id='nim' name='nim' onChange={this.handleTambahMahasiswa} />
@@ -101,7 +101,7 @@ class ListMahasiswa extends Component {
             </div>
             <div>
               <br />
-              <button type='submit' className='btn btn-primary' onClick={this.handleTombolSimpan}>Simpan</button>
+              <button type="submit" className="btn btn-primary" onClick={this.handleTombolSimpan}>Simpan</button>
             </div>
           </div>
         </div>
@@ -114,14 +114,14 @@ class ListMahasiswa extends Component {
         {
           this.state.listMahasiswa.map(mahasiswa => {
             return <Mahasiswa
-              key={mahasiswa.nim}
+              key={mahasiswa.id}
               nim={mahasiswa.nim}
               nama={mahasiswa.nama}
               alamat={mahasiswa.alamat}
               hp={mahasiswa.hp}
               angkatan={mahasiswa.angkatan}
               status={mahasiswa.status}
-              deleteData={this.handleHapusMahasiswa} />
+              hapus={this.handleHapusMahasiswa} />
           })
         }
       </div>

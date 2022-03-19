@@ -9,55 +9,13 @@
       "status": "aktif"
     },
     {
-      "nim": 1941720028,
-      "nama": "Lalita",
-      "alamat": "Jl. Menur No. 9 Surabaya",
-      "hp": "081802023523",
-      "angkatan": 2014,
-      "status": "lulus"
-    },
-    {
-      "nim": 1941720087,
-      "nama": "Jihan ",
-      "alamat": "Jl. Hayam Wuruk No. 2 Surabaya",
-      "hp": "08180987521",
-      "angkatan": 2014,
-      "status": "lulus"
-    },
-    {
-      "nim": 1941720221,
-      "nama": "Haidar ",
-      "alamat": "Jl. Raden Wijaya No. 45  Medan",
-      "hp": "08180987521",
-      "angkatan": 2017,
-      "status": "lulus"
-    },
-    {
-      "id": "1941720134",
-      "nim": "1941720134",
-      "nama": "Nabila AKu",
+      "id": "1941720093",
+      "nim": "1941720093",
+      "nama": "Nabila",
       "alamat": "Malang",
-      "hp": "089692236741",
-      "angkatan": "2019",
+      "hp": "08177245379",
+      "angkatan": "2018",
       "status": "aktif"
-    },
-    {
-      "id": "UXFwAeA",
-      "nim": "",
-      "nama": "",
-      "alamat": "",
-      "hp": "",
-      "angkatan": "",
-      "status": ""
-    },
-    {
-      "id": "12",
-      "nim": "123",
-      "nama": "",
-      "alamat": "",
-      "hp": "",
-      "angkatan": "",
-      "status": ""
     }
   ]
 }
