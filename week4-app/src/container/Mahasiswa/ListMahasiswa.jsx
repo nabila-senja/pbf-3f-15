@@ -13,6 +13,7 @@ class ListMahasiswa extends Component {
       hp: "",
       angkatan: "",
       status: "",
+      date: ""
     },
   };
 
@@ -58,16 +59,15 @@ class ListMahasiswa extends Component {
       },
       body: JSON.stringify(this.state.insertMahasiswa)
     })
-    .then((Response) => {
-      this.ambilDataDariServerAPI()
-    })
+      .then((Response) => {
+        this.ambilDataDariServerAPI()
+      })
   }
 
   render() {
     return (
       <>
-      <div className='row g-3'>
-        <div className="card">
+        <div className='row g-3'>
           <h3>Form Input Mahasiswa</h3>
           <div className="card-body">
             <div className='col-md-6'>
@@ -99,34 +99,39 @@ class ListMahasiswa extends Component {
                 <option value='lulus'>Lulus</option>
               </select>
             </div>
+            <div className='col-md-4'>
+              <label htmlFor='date' className='form-label'>Time</label>
+              <input type='date' className='form-control' id='date' name='date' onChange={this.handleTambahMahasiswa} />
+            </div>
             <div>
               <br />
               <button type="submit" className="btn btn-primary" onClick={this.handleTombolSimpan}>Simpan</button>
             </div>
+
           </div>
         </div>
-      </div>
-      <hr />
-      <center>
-        <h5>Data Mahasiswa</h5>
-      </center>
-      <div className='row g-3'>
-        {
-          this.state.listMahasiswa.map(mahasiswa => {
-            return <Mahasiswa
-              key={mahasiswa.id}
-              nim={mahasiswa.nim}
-              nama={mahasiswa.nama}
-              alamat={mahasiswa.alamat}
-              hp={mahasiswa.hp}
-              angkatan={mahasiswa.angkatan}
-              status={mahasiswa.status}
-              hapus={this.handleHapusMahasiswa} />
-          })
-        }
-      </div>
-    </>
-  )
-}
+        <hr />
+        <center>
+          <h5>Data Mahasiswa</h5>
+        </center>
+        <div className='row g-3'>
+          {
+            this.state.listMahasiswa.map(mahasiswa => {
+              return <Mahasiswa
+                key={mahasiswa.id}
+                nim={mahasiswa.nim}
+                nama={mahasiswa.nama}
+                alamat={mahasiswa.alamat}
+                hp={mahasiswa.hp}
+                angkatan={mahasiswa.angkatan}
+                status={mahasiswa.status}
+                date={mahasiswa.date}
+                hapus={this.handleHapusMahasiswa} />
+            })
+          }
+        </div>
+      </>
+    )
+  }
 }
 export default ListMahasiswa;

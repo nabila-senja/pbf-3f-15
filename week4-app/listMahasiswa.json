@@ -9,13 +9,15 @@
       "status": "aktif"
     },
     {
-      "id": "1941720111",
-      "nim": "1941720111",
-      "nama": "Mahalini",
-      "alamat": "Jl. Mawar 2 Malang",
-      "hp": "089662221244",
+      "id": "1941720134",
+      "nim": "1941720134",
+      "nama": "Nabila senja",
+      "alamat": "malang",
+      "hp": "081924314532",
       "angkatan": "2019",
-      "status": "aktif"
+      "status": "aktif",
+      "timestamp": "",
+      "date": "2022-03-28"
     }
   ]
 }
