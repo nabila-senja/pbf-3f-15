@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './BlogPost.css';
 import Post from "../../component/BlogPost/Post";
+import API from "../../services/index";
 
 class BlogPost extends Component {
     state = {
@@ -14,13 +15,11 @@ class BlogPost extends Component {
 }
 
     ambilDataDariServerAPI = () => {
-        fetch('http://localhost:3004/posts')
-            .then(response => response.json())
-            .then(jsonHasilAmbilDariAPI => {
-                this.setState({
-                    listArticle: jsonHasilAmbilDariAPI
-                })
+        API.getNewsBlog().then(result => {
+            this.setState({
+                listArticle: result
             })
+        })
     }
 
 
@@ -28,12 +27,12 @@ class BlogPost extends Component {
         this.ambilDataDariServerAPI()
     }
 
-    handleHapusArticle = (data) => {
-        fetch(`http://localhost:3004/posts/${data}`, { method: "DELETE" })
-            .then(
-                (res) => this.ambilDataDariServerAPI()
-            );
-    };
+    handleHapusArtikel = (data) => {
+        API.deleteNewsBlog(data).then((response)=>{
+          this.ambilDataDariServerAPI();
+        })
+      };
+  
 
     handleTambahArticle = (event) => {
         let formInsertArticle = {...this.state.insertArticle};
@@ -46,17 +45,10 @@ class BlogPost extends Component {
       };
 
     handleTombolSimpan = () => {
-        fetch('http://localhost:3004/posts', {
-          method: 'post',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(this.state.insertArticle)
-        })
+        API.postNewsBlog(this.state.insertArticle)
         .then((response) => {
           this.ambilDataDariServerAPI()
-        })
+        });
       }
 
     render() {
